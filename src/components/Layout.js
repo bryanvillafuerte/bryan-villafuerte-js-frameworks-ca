@@ -6,8 +6,8 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import Home from "./Home";
-import Contact from "./Contact";
+import Home from "./home/Home";
+import Contact from "./contact/Contact";
 
 function Layout() {
   return (
