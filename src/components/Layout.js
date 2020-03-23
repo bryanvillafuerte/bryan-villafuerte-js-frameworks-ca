@@ -8,11 +8,12 @@ import {
 } from "react-router-dom";
 import Home from "./home/Home";
 import Contact from "./contact/Contact";
+import GameDetails from "./gameDetails/GameDetails";
 
 function Layout() {
   return (
     <Router>
-      <Navbar bg="dark" variant="dark" expand="md">
+      <Navbar bg="dark" variant="dark" expand="md" sticky="top">
         <NavLink to="/" exact>
           <Navbar.Brand>DevShaft Media</Navbar.Brand>
         </NavLink>
@@ -32,6 +33,7 @@ function Layout() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
+          <Route path="/games/:id" component={GameDetails} />
         </Switch>
       </Container>
     </Router>

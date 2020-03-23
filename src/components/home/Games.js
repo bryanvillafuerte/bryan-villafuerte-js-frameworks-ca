@@ -1,23 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Spinner, Card, Button, CardColumns, CardDeck } from "react-bootstrap";
+import { Spinner, Card, Button, } from "react-bootstrap";
 import { BASE_URL } from "../../constants/api";
 
 function Games() {
-/*  useEffect(function() {
-    fetch(BASE_URL)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(json) {
-            console.dir(json);
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
-}, []);
-
-return null; */
-
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -36,15 +21,19 @@ return null; */
   return (
     <>
       {games.map(gameTitle => (
-        <Card key={gameTitle.id} className="card-container">
-          <Card.Img variant="top" src={gameTitle.background_image} alt="GamePhoto" />
-          <Card.Body>
-            <Card.Title className="display-4">{gameTitle.name}</Card.Title>
-            <Card.Text>{gameTitle.rating}</Card.Text>
-            <Card.Text>{gameTitle.released}</Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
+        <div key={gameTitle.id} className="col-md-4">
+          <Card className="bg-dark text-light h-100">
+            <Card.Img variant="top" src={gameTitle.background_image} alt="GamePhoto" />
+            <Card.ImgOverlay className="d-flex flex-column justify-content-end">
+              <div className="overlay-container">
+                <Card.Title>{gameTitle.name}</Card.Title>
+                <Card.Text>Rating: {gameTitle.rating}</Card.Text>
+                <Card.Text>Release Date: {gameTitle.released}</Card.Text>
+                <Button variant="primary">Game Details</Button>
+              </div>
+            </Card.ImgOverlay>
+          </Card>
+        </div>
       ))}
     </>
   );
