@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Spinner, Card, Button, } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { BASE_URL } from "../../constants/api";
+import Row from 'react-bootstrap/Row';
+import CardGroup from 'react-bootstrap/CardGroup';
+import GameCard from "../gameDetails/GameCard";
 
 function Games() {
   const [games, setGames] = useState([]);
@@ -15,26 +18,24 @@ function Games() {
   }, []);
 
   if (loading) {
-    return <Spinner animation="border" variant="primary" />;
+    return <div className="h-100 align-middle text-center"><Spinner animation="border" variant="primary" /></div>;
   }
 
   return (
     <>
-      {games.map(gameTitle => (
-        <div key={gameTitle.id} className="col-md-4">
-          <Card className="bg-dark text-light h-100">
-            <Card.Img variant="top" src={gameTitle.background_image} alt="GamePhoto" />
-            <Card.ImgOverlay className="d-flex flex-column justify-content-end">
-              <div className="overlay-container">
-                <Card.Title>{gameTitle.name}</Card.Title>
-                <Card.Text>Rating: {gameTitle.rating}</Card.Text>
-                <Card.Text>Release Date: {gameTitle.released}</Card.Text>
-                <Button variant="primary">Game Details</Button>
+      <Row>
+        <CardGroup>
+          {games.map(gameTitle => {
+            const { id, name, background_image, rating, released } = gameTitle;
+
+            return (
+              <div key={id} className="col-md-4">
+                <GameCard id={id} name={name} background_image={background_image} rating={rating} released={released} />
               </div>
-            </Card.ImgOverlay>
-          </Card>
-        </div>
-      ))}
+            );
+          })}
+        </CardGroup>
+      </Row>
     </>
   );
 }

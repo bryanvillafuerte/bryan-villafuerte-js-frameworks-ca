@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,7 +33,7 @@ function Layout() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
-          <Route path="/games/:id" component={GameDetails} />
+          <Route path="/game/:id" component={GameDetails} />
         </Switch>
       </Container>
     </Router>
