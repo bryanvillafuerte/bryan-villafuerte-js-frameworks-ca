@@ -30,10 +30,10 @@ function GameDetails() {
       <Heading title={detail.name_original} />
       <Row>
         <Col md={6}>
-          <div className="game-image-container"><Image src={detail.background_image_additional} className="game-detail-image"></Image></div>
+          <div className="game-image-container"><Image src={detail.background_image} className="game-detail-image"></Image></div>
 
           <div className="website-container">
-            <p className="text-light"><i className="fas fa-globe text-primary"></i> Official Site: <a href="{detail.website}"dangerouslySetInnerHTML={{ __html: detail.website }} /></p>
+            <p className="text-light"><i className="fas fa-globe text-primary"></i> Official Site: <a href={detail.website} dangerouslySetInnerHTML={{ __html: detail.website }} /></p>
           </div>
 
           <div className="badge-container">
@@ -42,7 +42,18 @@ function GameDetails() {
               const  { id } = genre;
 
               return (
-                <Badge key={id} variant="secondary" className="genre-badge">{genre.name}</Badge>
+                <Badge key={id} variant="light" className="genre-badge">{genre.name}</Badge>
+              )
+            })}
+          </div>
+
+          <div className="platform-container">
+            <h5 className="text-secondary">Platforms</h5>
+            {detail.platforms.map(platform => {
+              const  { id } = platform;
+
+              return (
+                <Badge key={id} variant="light" className="platform-badge">{platform.platform.name}</Badge>
               )
             })}
           </div>

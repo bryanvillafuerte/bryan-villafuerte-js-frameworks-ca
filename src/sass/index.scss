@@ -17,10 +17,9 @@ code {
   margin-bottom: 2rem;
 
   hr {
-    height: .5rem;
+    height: .3rem;
     background: #ffc107;
-    border-radius: 5px
-    ;
+    border-radius: 2px;
   }
 }
 
@@ -40,7 +39,15 @@ code {
         margin-bottom: .5rem;
         font-size: x-large;
       }
-  
+
+      .heart-container {
+        .btn-danger {
+          margin-top: 0;
+          font-size: large;
+          border-radius: 100px;
+        }
+      }
+
       .card-text {
         margin-bottom: 0;
       }
@@ -82,13 +89,26 @@ code {
   }
 
   .badge-container {
+    margin-bottom: 1rem;
+
     h5 {
-      
+      margin-bottom: 0;
     }
     
     .genre-badge {
       margin-right: .5rem;
-      margin-bottom: 2rem;
+    }
+  }
+
+  .platform-container {
+    margin-bottom: 3rem;
+
+    h5 {
+      margin-bottom: 0;
+    }
+    
+    .platform-badge {
+      margin-right: .5rem;
     }
   }
 }
