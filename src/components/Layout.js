@@ -29,7 +29,7 @@ function Layout() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Container>
+      <Container fluid className="main-container">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
