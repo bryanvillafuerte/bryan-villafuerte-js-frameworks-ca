@@ -10,7 +10,7 @@
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "minimist": "^1.2.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.0",
